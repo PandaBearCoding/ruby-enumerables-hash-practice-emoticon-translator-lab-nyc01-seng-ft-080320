@@ -16,7 +16,7 @@ def load_library
 
   end
   result
-end	end
+end
 
 def get_japanese_emoticon
   result = "Sorry, that emoticon was not found"
