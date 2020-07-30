@@ -18,6 +18,8 @@ def load_library
   result
 end
 
+
+
 def get_japanese_emoticon
   result = "Sorry, that emoticon was not found"
   data = load_library(file)
@@ -34,6 +36,8 @@ def get_japanese_emoticon
   end
   result 
 end
+
+
 
 def get_english_meaning
 result = "Sorry, that emoticon was not found"
