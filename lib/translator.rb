@@ -13,7 +13,6 @@ def load_library(file)
     end
   new_hash 
 end
-end
 
 
 
@@ -31,13 +30,14 @@ end
 
 
 
-def get_english_meaning
-result = "Sorry, that emoticon was not found"
-  data = load_library(file)
-  data.each do |emoti_name , emoti_trans|
-    if emoti_trans[:japanese] == japanese_emoticon
-      result = emoti_name
-    end
+def get_english_meaning(file, emoticon)
+  library = load_library(file)
+  word = library.keys.find do |key|
+    library[key][:japanese] == emoticon 
   end
-  result
+  if word 
+    word
+  else
+    "Sorry, that emoticon was not found"
+  end
 end
