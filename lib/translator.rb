@@ -1,8 +1,19 @@
 # require modules here
 
 def load_library
-  # code goes here
-end
+  data = YAML.load_file(file)
+  result = {}
+  data.each do |emoti_name, emoti_trans|
+    english = emoti_trans[0]
+    japanese = emoti_trans[1]
+    result[emoti_name] = {
+        :english => english,
+        :japanese => japanese
+    }
+
+  end
+  result
+end	end
 
 def get_japanese_emoticon
   result = "Sorry, that emoticon was not found"
