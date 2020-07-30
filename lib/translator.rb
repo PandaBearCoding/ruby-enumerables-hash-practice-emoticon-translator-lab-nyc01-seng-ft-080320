@@ -17,15 +17,16 @@ end
 
 
 
-def get_japanese_emoticon
-  result = "Sorry, that emoticon was not found"
-  data = load_library(file)
-  data.each do |emoti_name , emoti_trans|
-    if emoti_trans[:english] == western_emoticon
-      result = emoti_trans[:japanese]
-    end
+def get_japanese_emoticon(file, emoticon)
+  library = load_library(file)
+  word = library.keys.find do |key|
+    library[key][:english] == emoticon  
   end
-  result 
+  if word 
+    library[word][:japanese]  
+  else
+    "Sorry, that emoticon was not found"
+  end
 end
 
 
