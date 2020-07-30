@@ -23,12 +23,6 @@ end
 def get_japanese_emoticon
   result = "Sorry, that emoticon was not found"
   data = load_library(file)
-  #data = {
-    # "happy" => {
-    #  :english => :) ,
-     # :japanese => )))
-   # }
-  #}
   data.each do |emoti_name , emoti_trans|
     if emoti_trans[:english] == western_emoticon
       result = emoti_trans[:japanese]
